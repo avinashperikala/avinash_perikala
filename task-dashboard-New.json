@@ -6,7 +6,8 @@
         {
             "id": "model0000017ce4b5b5f6_00000000:1",
             "widgetIds": [
-                "model0000017ce4b621b0_00000000"
+                "model0000017ce4b621b0_00000000",
+                "model0000017cf3bfd4af_00000000"
             ]
         }
     ],
@@ -425,6 +426,85 @@
                                                 "binsLabel": "Product Type"
                                             }
                                         ],
+                                        "savedPrompts": null
+                                    }
+                                }
+                            },
+                            {
+                                "id": "model0000017cf3bfd4af_00000000",
+                                "style": {
+                                    "left": "18.75%",
+                                    "top": "51.94444444444444%",
+                                    "height": "50.69444444444444%",
+                                    "width": "40.783750000000005%"
+                                },
+                                "type": "widget",
+                                "relatedLayouts": "",
+                                "features": {
+                                    "Models_internal": {
+                                        "type": "live",
+                                        "id": "model0000017cf3bfd4af_00000000",
+                                        "visId": "com.ibm.vis.rave2bundlecolumn",
+                                        "titleHtml": {
+                                            "translationTable": {
+                                                "Default": "<div class=\"widgetTitle smallTitle\" title=\"Product Line by Revenue\" aria-labelledby=\"model0000017cf3bfd4af_00000000Title\" walkme-data-id=\"widgetTitle\"><div class=\"textArea hidden\"><div class=\"summernote\" style=\"display: none;\"></div><div class=\"note-editor\"><div class=\"note-dropzone\">  <div class=\"note-dropzone-message\"></div></div><div class=\"note-editing-area\"><div class=\"note-handle\"><div class=\"note-control-selection\"><div class=\"note-control-selection-bg\"></div><div class=\"note-control-holder note-control-nw\"></div><div class=\"note-control-holder note-control-ne\"></div><div class=\"note-control-holder note-control-sw\"></div><div class=\"note-control-sizing note-control-se\"></div><div class=\"note-control-selection-info\"></div></div></div><div class=\"note-editable\" contenteditable=\"false\" id=\"model0000017cf3bfd4af_00000000Title\"><span class=\"textFitted responsiveColor responsiveFontSize responsiveFontFamily\"><p><span>Revenue by Product Line</span></p></span></div></div></div></div></div>"
+                                            }
+                                        },
+                                        "titleMode": "smartTitle",
+                                        "name": {
+                                            "translationTable": {
+                                                "Default": "Revenue by Product Line"
+                                            }
+                                        },
+                                        "data": {
+                                            "dataViews": [
+                                                {
+                                                    "id": "model0000017cf3c2d010_00000000",
+                                                    "modelRef": "model0000017ce4b60fce_00000002",
+                                                    "dataItems": [
+                                                        {
+                                                            "id": "id1646116591",
+                                                            "itemId": "page_3.Product_line",
+                                                            "itemLabel": "Product Line"
+                                                        },
+                                                        {
+                                                            "id": "id1146031252",
+                                                            "itemId": "page_6.Revenue",
+                                                            "itemLabel": "Revenue"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "visTypeLocked": true,
+                                        "slotmapping": {
+                                            "slots": [
+                                                {
+                                                    "name": "values",
+                                                    "dataItems": [
+                                                        "id1146031252"
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "categories",
+                                                    "dataItems": [
+                                                        "id1646116591"
+                                                    ]
+                                                }
+                                            ],
+                                            "multiMeasureGroups": {
+                                                "data": {
+                                                    "slotId": "color",
+                                                    "position": 0
+                                                }
+                                            }
+                                        },
+                                        "annotations": {
+                                            "selectedAnnotations": [
+                                                "AVERAGE",
+                                                "MEANINGFUL_DIFFERENCES"
+                                            ]
+                                        },
                                         "savedPrompts": null
                                     }
                                 }
