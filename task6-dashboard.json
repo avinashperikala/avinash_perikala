@@ -1,0 +1,632 @@
+{
+    "name": "task5 dashboard",
+    "theme": "carbonGrey10",
+    "version": 2150,
+    "eventGroups": [
+        {
+            "id": "model0000017ce4b5b5f6_00000000:1",
+            "widgetIds": [
+                "model0000017ce4b621b0_00000000"
+            ]
+        }
+    ],
+    "properties": {
+        "customColors": {
+            "colors": [
+                "#1D2473"
+            ]
+        },
+        "defaultLocale": "Default",
+        "fredIsRed": true
+    },
+    "fredIsRed": {
+        "id": "model0000017ce4b5b5f2_00000000",
+        "colorMap": {
+            "Product Linecountdistinct": {
+                "v": 0,
+                "s": 2
+            },
+            "Revenuesum": {
+                "v": 1,
+                "s": 2
+            }
+        },
+        "saveId": 2
+    },
+    "pageContext": [],
+    "drillThrough": [],
+    "dataSources": {
+        "version": "1.0",
+        "sources": [
+            {
+                "id": "model0000017ce4b60fce_00000002",
+                "assetId": "iE50096210B5948B5BB8C832908CAADFE",
+                "type": "module",
+                "name": "Great outdoors data module",
+                "shaping": {
+                    "shapingId": "shaping0000017ce4c9a4b7_00000000",
+                    "references": {},
+                    "embeddedModuleId": "iDA71ECFE2DF94012B1226059BBC7CF50",
+                    "embeddedModuleName": "model0000017ce4b60fce_00000001",
+                    "embeddedModuleUpToDate": true,
+                    "moserJSON": {
+                        "version": "14.0",
+                        "container": "C",
+                        "useSpec": [
+                            {
+                                "identifier": "ES",
+                                "type": "module",
+                                "storeID": "iE50096210B5948B5BB8C832908CAADFE",
+                                "imports": "*",
+                                "ancestors": [
+                                    {
+                                        "defaultName": "Team Content",
+                                        "storeID": ".public_folders"
+                                    },
+                                    {
+                                        "defaultName": "Samples",
+                                        "storeID": "i03CEFD796E8143D6B1150D7277D6BF70"
+                                    },
+                                    {
+                                        "defaultName": "Data",
+                                        "storeID": "iD8BE139D6DBE44AE943C44AB43E97077"
+                                    }
+                                ]
+                            }
+                        ],
+                        "expressionLocale": "en-us",
+                        "calculation": [
+                            {
+                                "expression": "page_6.Quantity+ page_6.Unit_sale_price- page_4.Return_quantity",
+                                "usage": "fact",
+                                "datatype": "DOUBLE",
+                                "nullable": true,
+                                "regularAggregate": "calculated",
+                                "datatypeCategory": "number",
+                                "highlevelDatatype": "decimal",
+                                "facetDefinition": {
+                                    "enabled": "automatic"
+                                },
+                                "identifier": "cost_of_goods_sold",
+                                "label": "cost of goods sold",
+                                "propertyOverride": [
+                                    "NEW"
+                                ],
+                                "property": [
+                                    {
+                                        "name": "_MUI_expr",
+                                        "value": "{\"func\":\"customCalculation\",\"version\":\"14.0\"}"
+                                    }
+                                ]
+                            },
+                            {
+                                "expression": "cost_of_goods_sold - page_6.Gross_profit",
+                                "usage": "fact",
+                                "datatype": "DOUBLE",
+                                "nullable": true,
+                                "regularAggregate": "calculated",
+                                "datatypeCategory": "number",
+                                "highlevelDatatype": "decimal",
+                                "facetDefinition": {
+                                    "enabled": "automatic"
+                                },
+                                "identifier": "Gross_Profit_margin",
+                                "label": "Gross Profit margin",
+                                "propertyOverride": [
+                                    "NEW"
+                                ],
+                                "property": [
+                                    {
+                                        "name": "_MUI_expr",
+                                        "value": "{\"func\":\"customCalculation\",\"version\":\"14.0\"}"
+                                    }
+                                ]
+                            },
+                            {
+                                "expression": "page_6.Gross_profit + 0",
+                                "usage": "fact",
+                                "datatype": "DOUBLE",
+                                "nullable": true,
+                                "regularAggregate": "calculated",
+                                "datatypeCategory": "number",
+                                "highlevelDatatype": "decimal",
+                                "facetDefinition": {
+                                    "enabled": "automatic"
+                                },
+                                "identifier": "Gross_Profit_Margin_1",
+                                "label": "Gross Profit Margin",
+                                "propertyOverride": [
+                                    "NEW"
+                                ],
+                                "property": [
+                                    {
+                                        "name": "_MUI_expr",
+                                        "value": "{\"func\":\"customCalculation\",\"version\":\"14.0\"}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "metadataTreeView": [
+                            {
+                                "folderItem": [
+                                    {
+                                        "ref": "Gross_Profit_Margin_1"
+                                    },
+                                    {
+                                        "ref": "Gross_Profit_margin"
+                                    },
+                                    {
+                                        "ref": "cost_of_goods_sold"
+                                    }
+                                ]
+                            }
+                        ],
+                        "dataRetrievalMode": "liveConnection",
+                        "identifier": "C_Great_outdoors_data_module",
+                        "label": "model0000017ce4b60fce_00000001"
+                    }
+                }
+            }
+        ]
+    },
+    "layout": {
+        "id": "model0000017ce4b5b5f5_00000000",
+        "style": {
+            "height": "100%"
+        },
+        "type": "tab",
+        "showGrid": true,
+        "snapGrid": true,
+        "snapObjects": true,
+        "pageSize": {
+            "width": 1280,
+            "height": 720
+        },
+        "layoutPositioning": "relative",
+        "items": [
+            {
+                "id": "model0000017ce4b5b5f6_00000000",
+                "type": "container",
+                "title": {
+                    "translationTable": {
+                        "Default": "Tab 1"
+                    }
+                },
+                "templateName": "Template1",
+                "items": [
+                    {
+                        "id": "model0000017ce4b5b5f7_00000000",
+                        "css": "templateBox aspectRatio_default",
+                        "type": "genericPage",
+                        "layoutPositioning": "relative",
+                        "items": [
+                            {
+                                "id": "model0000017ce4b5b5f7_00000002",
+                                "style": {
+                                    "top": "0%",
+                                    "left": "0%",
+                                    "right": "0%",
+                                    "bottom": "0%"
+                                },
+                                "type": "templateIndicator"
+                            },
+                            {
+                                "id": "model0000017ce4b621b0_00000000",
+                                "style": {
+                                    "left": "1.5625%",
+                                    "top": "0%",
+                                    "height": "100%",
+                                    "width": "98.4375%"
+                                },
+                                "type": "widget",
+                                "relatedLayouts": "",
+                                "features": {
+                                    "ConditionalFormatting": {
+                                        "conditionalFormats": [
+                                            {
+                                                "paletteId": "carbonPaletteGreenYellowRed",
+                                                "scale": "#",
+                                                "rules": [
+                                                    {
+                                                        "ruleType": "threshold",
+                                                        "startCondition": {
+                                                            "type": "=="
+                                                        },
+                                                        "ruleStyle": {
+                                                            "fillColor": "",
+                                                            "textColor": "color0",
+                                                            "shape": "upArrow"
+                                                        },
+                                                        "operator": "none"
+                                                    },
+                                                    {
+                                                        "ruleType": "threshold",
+                                                        "startCondition": {
+                                                            "type": "<"
+                                                        },
+                                                        "ruleStyle": {
+                                                            "fillColor": "",
+                                                            "textColor": "color3",
+                                                            "shape": "upArrow"
+                                                        },
+                                                        "operator": "none"
+                                                    }
+                                                ],
+                                                "backgroundOpacity": 50,
+                                                "heatId": "id_1412536842",
+                                                "dataItemId": "Gross_Profit_Margin_1"
+                                            }
+                                        ],
+                                        "summaryFillColor": "#42BE65"
+                                    },
+                                    "Models_internal": {
+                                        "type": "live",
+                                        "id": "model0000017ce4b621b0_00000000",
+                                        "visId": "crosstab",
+                                        "titleHtml": {
+                                            "translationTable": {
+                                                "Default": "<div class=\"widgetTitle mediumTitle\" title=\"Product line Profitability\" aria-labelledby=\"model0000017ce4b621b0_00000000Title\" walkme-data-id=\"widgetTitle\"><div class=\"textArea\"><div class=\"summernote\" style=\"display: none;\"></div><div class=\"note-editor\"><div class=\"note-dropzone\">  <div class=\"note-dropzone-message\"></div></div><div class=\"note-editing-area\"><div class=\"note-handle\"><div class=\"note-control-selection\" style=\"display: none;\"><div class=\"note-control-selection-bg\"></div><div class=\"note-control-holder note-control-nw\"></div><div class=\"note-control-holder note-control-ne\"></div><div class=\"note-control-holder note-control-sw\"></div><div class=\"note-control-sizing note-control-se\"></div><div class=\"note-control-selection-info\"></div></div></div><div class=\"note-editable\" contenteditable=\"true\" id=\"model0000017ce4b621b0_00000000Title\"><span class=\"textFitted responsiveColor responsiveFontSize responsiveFontFamily\"><p><b>Product line Profitability</b></p></span></div></div></div></div></div>"
+                                            }
+                                        },
+                                        "titleMode": "customTitle",
+                                        "responsiveTitle": true,
+                                        "name": {
+                                            "translationTable": {
+                                                "Default": "Product line Profitability"
+                                            }
+                                        },
+                                        "data": {
+                                            "dataViews": [
+                                                {
+                                                    "id": "model0000017ce4c9a9e4_00000000",
+                                                    "modelRef": "model0000017ce4b60fce_00000002",
+                                                    "dataItems": [
+                                                        {
+                                                            "id": "id1646116591",
+                                                            "itemId": "page_3.Product_line",
+                                                            "itemLabel": "Product Line",
+                                                            "union": {}
+                                                        },
+                                                        {
+                                                            "id": "id1646370357",
+                                                            "itemId": "page_3.Product_type",
+                                                            "itemLabel": "Product Type",
+                                                            "union": {}
+                                                        },
+                                                        {
+                                                            "id": "id1666805874",
+                                                            "itemId": "page_6.Revenue",
+                                                            "itemLabel": "Revenue",
+                                                            "union": {}
+                                                        },
+                                                        {
+                                                            "id": "id_1455382893",
+                                                            "itemId": "cost_of_goods_sold",
+                                                            "itemLabel": "cost of goods sold",
+                                                            "union": {}
+                                                        },
+                                                        {
+                                                            "id": "id_916901081",
+                                                            "itemId": "page_6.Gross_profit",
+                                                            "itemLabel": "Gross Profit",
+                                                            "union": {}
+                                                        },
+                                                        {
+                                                            "id": "id270093664",
+                                                            "itemId": "Gross_Profit_Margin_1",
+                                                            "itemLabel": "Gross Profit Margin",
+                                                            "union": {}
+                                                        },
+                                                        {
+                                                            "id": "id768928014",
+                                                            "itemId": "Gross_Profit_margin",
+                                                            "itemLabel": "Gross Profit margin",
+                                                            "union": {}
+                                                        },
+                                                        {
+                                                            "id": "id1146031252",
+                                                            "itemId": "page_6.Revenue",
+                                                            "itemLabel": "Revenue",
+                                                            "union": {}
+                                                        },
+                                                        {
+                                                            "id": "id_1412536842",
+                                                            "itemId": "Gross_Profit_Margin_1",
+                                                            "itemLabel": "Gross Profit Margin",
+                                                            "union": {}
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "visTypeLocked": true,
+                                        "slotmapping": {
+                                            "slots": [
+                                                {
+                                                    "name": "row_level1",
+                                                    "dataItems": [
+                                                        "id1646116591",
+                                                        "id1646370357"
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "values",
+                                                    "dataItems": [
+                                                        "id1666805874",
+                                                        "id_1455382893",
+                                                        "id_916901081",
+                                                        "id270093664",
+                                                        "id1146031252"
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "heat",
+                                                    "dataItems": [
+                                                        "id768928014",
+                                                        "id_1412536842"
+                                                    ]
+                                                }
+                                            ],
+                                            "multiMeasureGroups": {}
+                                        },
+                                        "properties": [
+                                            {
+                                                "id": "hideSummaries",
+                                                "value": false
+                                            }
+                                        ],
+                                        "localFilters": [
+                                            {
+                                                "id": "page_6.Year_",
+                                                "columnId": "page_6.Year_",
+                                                "values": [
+                                                    {
+                                                        "d": 2015,
+                                                        "u": "page_6.Year_->[2015]"
+                                                    },
+                                                    {
+                                                        "d": 2016,
+                                                        "u": "page_6.Year_->[2016]"
+                                                    },
+                                                    {
+                                                        "d": 2017,
+                                                        "u": "page_6.Year_->[2017]"
+                                                    },
+                                                    {
+                                                        "d": 2018,
+                                                        "u": "page_6.Year_->[2018]"
+                                                    }
+                                                ],
+                                                "excludedValues": [],
+                                                "operator": "in",
+                                                "type": null,
+                                                "binsLabel": "Year"
+                                            },
+                                            {
+                                                "id": "page_3.Product_type",
+                                                "columnId": "page_3.Product_type",
+                                                "values": [
+                                                    {
+                                                        "d": "Binoculars",
+                                                        "u": "page_3.Product_type->[Binoculars]"
+                                                    },
+                                                    {
+                                                        "d": "Climbing Accessories",
+                                                        "u": "page_3.Product_type->[Climbing Accessories]"
+                                                    },
+                                                    {
+                                                        "d": "Eyewear",
+                                                        "u": "page_3.Product_type->[Eyewear]"
+                                                    }
+                                                ],
+                                                "excludedValues": [],
+                                                "operator": "in",
+                                                "type": null,
+                                                "binsLabel": "Product Type"
+                                            }
+                                        ],
+                                        "savedPrompts": null
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "features": {
+        "ContentStoreReferences": [
+            {
+                "objects": [
+                    {
+                        "searchPath": "/content/folder[@name='Samples']/folder[@name='Data']/module[@name='Great outdoors data module']",
+                        "_meta": {
+                            "links": {
+                                "path": {
+                                    "mimeType": "application/vnd.ibm.bi.module+json",
+                                    "url": "/bi/v1/path?path=.public_folders%2FSamples%2FData%2FGreat%2Boutdoors%2Bdata%2Bmodule"
+                                },
+                                "smarts_modules": {
+                                    "mimeType": "application/json",
+                                    "url": "/bi/v1/objects/iE50096210B5948B5BB8C832908CAADFE/smarts_modules"
+                                },
+                                "self": {
+                                    "mimeType": "application/vnd.ibm.bi.module+json",
+                                    "url": "/bi/v1/objects/iE50096210B5948B5BB8C832908CAADFE"
+                                }
+                            }
+                        },
+                        "id": "iE50096210B5948B5BB8C832908CAADFE",
+                        "ancestors": [
+                            {
+                                "_meta": {
+                                    "links": {
+                                        "self": {
+                                            "mimeType": "application/vnd.ibm.bi.content+json",
+                                            "url": "/bi/v1/objects/i9D6016A548364A31B09A9BEC9BDBB3A4"
+                                        },
+                                        "items": {
+                                            "mimeType": "application/json",
+                                            "url": "/bi/v1/objects/i9D6016A548364A31B09A9BEC9BDBB3A4/items"
+                                        }
+                                    }
+                                },
+                                "id": "i9D6016A548364A31B09A9BEC9BDBB3A4",
+                                "type": "content",
+                                "defaultName": "Team Content"
+                            },
+                            {
+                                "_meta": {
+                                    "links": {
+                                        "self": {
+                                            "mimeType": "application/vnd.ibm.bi.folder+json",
+                                            "url": "/bi/v1/objects/i03CEFD796E8143D6B1150D7277D6BF70"
+                                        },
+                                        "items": {
+                                            "mimeType": "application/json",
+                                            "url": "/bi/v1/objects/i03CEFD796E8143D6B1150D7277D6BF70/items"
+                                        }
+                                    }
+                                },
+                                "id": "i03CEFD796E8143D6B1150D7277D6BF70",
+                                "type": "folder",
+                                "defaultName": "Samples"
+                            },
+                            {
+                                "_meta": {
+                                    "links": {
+                                        "self": {
+                                            "mimeType": "application/vnd.ibm.bi.folder+json",
+                                            "url": "/bi/v1/objects/iD8BE139D6DBE44AE943C44AB43E97077"
+                                        },
+                                        "items": {
+                                            "mimeType": "application/json",
+                                            "url": "/bi/v1/objects/iD8BE139D6DBE44AE943C44AB43E97077/items"
+                                        }
+                                    }
+                                },
+                                "id": "iD8BE139D6DBE44AE943C44AB43E97077",
+                                "type": "folder",
+                                "defaultName": "Data"
+                            }
+                        ],
+                        "type": "module",
+                        "defaultName": "Great outdoors data module"
+                    }
+                ],
+                "name": {
+                    "en-us": "iE50096210B5948B5BB8C832908CAADFE"
+                }
+            },
+            {
+                "objects": [
+                    {
+                        "searchPath": "CAMID(\"bid:u:355139c6-80f2-4d29-ad13-f5523c9e1051-ab9cc735-03e7-4b6f-b1c8-ab5f40947c41\")/folder[@name='My Folders']/exploration[@name='task5 dashboard']/module[@name='model0000017ce4b60fce_00000001']",
+                        "_meta": {
+                            "links": {
+                                "path": {
+                                    "mimeType": "application/vnd.ibm.bi.module+json",
+                                    "url": "/bi/v1/path?path=.my_folders%2Ftask5%2Bdashboard%2Fmodel0000017ce4b60fce_00000001"
+                                },
+                                "smarts_modules": {
+                                    "mimeType": "application/json",
+                                    "url": "/bi/v1/objects/iDA71ECFE2DF94012B1226059BBC7CF50/smarts_modules"
+                                },
+                                "self": {
+                                    "mimeType": "application/vnd.ibm.bi.module+json",
+                                    "url": "/bi/v1/objects/iDA71ECFE2DF94012B1226059BBC7CF50"
+                                }
+                            }
+                        },
+                        "id": "iDA71ECFE2DF94012B1226059BBC7CF50",
+                        "ancestors": [
+                            {
+                                "_meta": {
+                                    "links": {
+                                        "self": {
+                                            "mimeType": "application/vnd.ibm.bi.directory+json",
+                                            "url": "/bi/v1/objects/i5F71FE7126B84421AD9205F85FEBA040"
+                                        }
+                                    }
+                                },
+                                "id": "i5F71FE7126B84421AD9205F85FEBA040",
+                                "type": "directory",
+                                "defaultName": "Directory"
+                            },
+                            {
+                                "_meta": {
+                                    "links": {
+                                        "self": {
+                                            "mimeType": "application/vnd.ibm.bi.namespace+json",
+                                            "url": "/bi/v1/objects/xYmlk"
+                                        },
+                                        "items": {
+                                            "mimeType": "application/json",
+                                            "url": "/bi/v1/namespaces/xYmlk/items"
+                                        }
+                                    }
+                                },
+                                "id": "xYmlk",
+                                "type": "namespace",
+                                "defaultName": "bid"
+                            },
+                            {
+                                "_meta": {
+                                    "links": {
+                                        "self": {
+                                            "mimeType": "application/vnd.ibm.bi.account+json",
+                                            "url": "/bi/v1/objects/xYmlkOnU6MzU1MTM5YzYtODBmMi00ZDI5LWFkMTMtZjU1MjNjOWUxMDUxLWFiOWNjNzM1LTAzZTctNGI2Zi1iMWM4LWFiNWY0MDk0N2M0MQ__"
+                                        },
+                                        "items": {
+                                            "mimeType": "application/json",
+                                            "url": "/bi/v1/objects/xYmlkOnU6MzU1MTM5YzYtODBmMi00ZDI5LWFkMTMtZjU1MjNjOWUxMDUxLWFiOWNjNzM1LTAzZTctNGI2Zi1iMWM4LWFiNWY0MDk0N2M0MQ__/items"
+                                        }
+                                    }
+                                },
+                                "id": "xYmlkOnU6MzU1MTM5YzYtODBmMi00ZDI5LWFkMTMtZjU1MjNjOWUxMDUxLWFiOWNjNzM1LTAzZTctNGI2Zi1iMWM4LWFiNWY0MDk0N2M0MQ__",
+                                "type": "account",
+                                "defaultName": "Avinash Perikala (ab5f40947c41)"
+                            },
+                            {
+                                "_meta": {
+                                    "links": {
+                                        "self": {
+                                            "mimeType": "application/vnd.ibm.bi.folder+json",
+                                            "url": "/bi/v1/objects/iD71F50EE05D64AEAA397F1C239836A9B"
+                                        },
+                                        "items": {
+                                            "mimeType": "application/json",
+                                            "url": "/bi/v1/objects/iD71F50EE05D64AEAA397F1C239836A9B/items"
+                                        }
+                                    }
+                                },
+                                "id": "iD71F50EE05D64AEAA397F1C239836A9B",
+                                "type": "folder",
+                                "defaultName": "My Folders"
+                            },
+                            {
+                                "_meta": {
+                                    "links": {
+                                        "self": {
+                                            "mimeType": "application/vnd.ibm.bi.exploration+json",
+                                            "url": "/bi/v1/objects/i612CA82F86494B2D96AEAD5F85661BA9"
+                                        }
+                                    }
+                                },
+                                "id": "i612CA82F86494B2D96AEAD5F85661BA9",
+                                "type": "exploration",
+                                "defaultName": "task5 dashboard"
+                            }
+                        ],
+                        "type": "module",
+                        "defaultName": "model0000017ce4b60fce_00000001"
+                    }
+                ],
+                "name": {
+                    "en-us": "iDA71ECFE2DF94012B1226059BBC7CF50"
+                }
+            }
+        ]
+    }
+}
